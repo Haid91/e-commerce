@@ -1,25 +1,24 @@
-const seedAuthors = require('./author-seeds');
-const seedBooks = require('./book-seeds');
-const seedGenres = require('./genre-seeds');
-const seedBookGenres = require('./book-genre-seeds');
+const seedCategories = require('./category-seeds');
+const seedProducts = require('./product-seeds');
+const seedTags = require('./tag-seeds');
+const seedProductTags = require('./product-tag-seeds');
 
 const sequelize = require('../config/connection');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
   console.log('\n----- DATABASE SYNCED -----\n');
+  await seedCategories();
+  console.log('\n----- CATEGORIES SEEDED -----\n');
 
-  await seedAuthors();
-  console.log('\n----- AUTHORS SEEDED -----\n');
+  await seedProducts();
+  console.log('\n----- PRODUCTS SEEDED -----\n');
 
-  await seedBooks();
-  console.log('\n----- BOOKS SEEDED -----\n');
+  await seedTags();
+  console.log('\n----- TAGS SEEDED -----\n');
 
-  await seedGenres();
-  console.log('\n----- GENRES SEEDED -----\n');
-
-  await seedBookGenres();
-  console.log('\n----- BOOK GENRES SEEDED -----\n');
+  await seedProductTags();
+  console.log('\n----- PRODUCT TAGS SEEDED -----\n');
 
   process.exit(0);
 };

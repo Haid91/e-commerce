@@ -1,28 +1,23 @@
-const { BookGenre } = require('../models');
+const { Category } = require('../models');
 
-const bookGenreData = [
+const categoryData = [
   {
-    genre_name: 'Fiction',
+    category_name: 'Shirts',
   },
   {
-    genre_name: 'Non-Fiction',
+    category_name: 'Shorts',
   },
   {
-    genre_name: 'Science Fiction',
+    category_name: 'Music',
   },
   {
-    genre_name: 'Fantasy',
+    category_name: 'Hats',
   },
   {
-    genre_name: 'Mystery',
-  },
-  {
-    genre_name: 'Biography',
+    category_name: 'Shoes',
   },
 ];
 
-const seedBookGenres = () => BookGenre.bulkCreate(bookGenreData);
+const seedCategories = () => Category.bulkCreate(categoryData);
 
-module.exports = seedBookGenres;
-
-
+module.exports = seedCategories;

@@ -1,15 +1,10 @@
-import express from 'express';
-import categoryRoutes from './category-routes';
-import productRoutes from './product-routes';
-import tagRoutes from './tag-routes';
+const router = require('express').Router();
+const categoryRoutes = require('./category-routes');
+const productRoutes = require('./product-routes');
+const tagRoutes = require('./tag-routes');
 
-// Creating a new router
-const router = express.Router();
-
-// Setting up routes
 router.use('/categories', categoryRoutes);
 router.use('/products', productRoutes);
 router.use('/tags', tagRoutes);
 
-// Exporting the router
-export default router;
+module.exports = router;
